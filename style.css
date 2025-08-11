@@ -17,7 +17,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 15px;
+  padding: 0px;
   z-index: 1100;
 }
 
@@ -28,6 +28,11 @@ body {
 .nav-right {
   display: flex;
   align-items: center;
+}
+.nav-logo img {
+  height: 40px;
+  width: auto;
+  vertical-align: middle;
 }
 
 .nav-right a {
