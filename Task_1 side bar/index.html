@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Project Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <button id="toggle-btn" aria-expanded="false" aria-controls="sidebar">
+        <i class="fas fa-bars"></i>
+      </button>
+      <h1 class="nav-logo">My Project</h1>
+      <div class="nav-right">
+        <div class="dropdown">
+          <a href="#profile"><i class="fas fa-user"></i></a>
+        </div>
+        <div class="dropdown">
+          <a href="#"><i class="fas fa-bell"></i></a>
+          <div class="dropdown-content">
+            <p>📢 New update available</p>
+            <p>✅ Your profile is 80% complete</p>
+            <p>💬 You have 2 new messages</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <a href="#home"><i class="fas fa-home"></i> Home</a>
+      <a href="#about"><i class="fas fa-user"></i> About</a>
+      <a href="#services"><i class="fas fa-cogs"></i> Services</a>
+      <a href="#taskflow"><i class="fas fa-tasks"></i> TaskFlow</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="#blog"><i class="fas fa-blog"></i> Blog</a>
+    </aside>
+
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Home -->
+      <section id="home" class="section">
+        <h2>Welcome to My Project</h2>
+        <p>
+          This website includes a responsive sidebar, a contact form with
+          validation, and a full TaskFlow app landing page.
+        </p>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>
+          We are a team passionate about building clean, functional, and
+          beautiful web interfaces.
+        </p>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="section">
+        <h2>Our Services</h2>
+        <ul>
+          <li>🌐 Web Development</li>
+          <li>📱 Mobile App Design</li>
+          <li>⚙️ UI/UX Consultation</li>
+        </ul>
+      </section>
+
+      <!-- TaskFlow -->
+      <section id="taskflow" class="section">
+        <header class="hero">
+          <h1>TaskFlow</h1>
+          <p>Organize your tasks. Boost your productivity.</p>
+          <a href="#pricing" class="cta-btn">Get Started</a>
+        </header>
+
+        <section class="features">
+          <h2>Why Choose TaskFlow?</h2>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <i class="fas fa-list-check"></i>
+              <h3>Easy Task Management</h3>
+              <p>Create, edit, and organize tasks in seconds.</p>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-bell"></i>
+              <h3>Reminders</h3>
+              <p>Never miss a deadline with smart notifications.</p>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-chart-line"></i>
+              <h3>Track Progress</h3>
+              <p>Visualize your productivity with reports.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="reviews">
+          <h2>What Our Users Say</h2>
+          <div class="review-grid">
+            <blockquote>
+              “TaskFlow has completely changed how I work. Highly recommend!”
+              <footer>- Sarah K.</footer>
+            </blockquote>
+            <blockquote>
+              “Simple, clean, and powerful. My go-to productivity app.”
+              <footer>- James L.</footer>
+            </blockquote>
+          </div>
+        </section>
+
+        <section class="pricing" id="pricing">
+          <h2>Choose Your Plan</h2>
+          <div class="pricing-grid">
+            <div class="price-card">
+              <h3>Free</h3>
+              <p>$0/month</p>
+              <ul>
+                <li>Basic Task Management</li>
+                <li>1 Device Sync</li>
+                <li>Email Support</li>
+              </ul>
+              <button>Get Free</button>
+            </div>
+            <div class="price-card popular">
+              <h3>Pro</h3>
+              <p>$5/month</p>
+              <ul>
+                <li>Unlimited Tasks</li>
+                <li>Multi-Device Sync</li>
+                <li>Priority Support</li>
+              </ul>
+              <button>Go Pro</button>
+            </div>
+            <div class="price-card">
+              <h3>Team</h3>
+              <p>$12/month</p>
+              <ul>
+                <li>Team Collaboration</li>
+                <li>Advanced Reports</li>
+                <li>Dedicated Manager</li>
+              </ul>
+              <button>Get Team</button>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- Blog Section -->
+      <section id="blog" class="section">
+        <h2>My Blog</h2>
+        <div class="blog-filter">
+          <button data-category="all" class="active">All</button>
+          <button data-category="tech">Tech</button>
+          <button data-category="travel">Travel</button>
+          <button data-category="food">Food</button>
+        </div>
+        <div class="blog-search">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search posts by title..."
+          />
+        </div>
+
+        <div class="blog-grid" id="blog-posts">
+          <!-- Blog posts will be inserted here by JS -->
+        </div>
+
+        <div class="pagination">
+          <button id="prev-page" disabled>Previous</button>
+          <span id="page-info">Page 1</span>
+          <button id="next-page">Next</button>
+        </div>
+      </section>
+
+      <!-- Contact Form -->
+      <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <form id="contactForm" novalidate>
+          <label for="name">Full Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your full name"
+            required
+          />
+          <small class="error"></small>
+
+          <label for="email">Email Address:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your email"
+            required
+          />
+          <small class="error"></small>
+
+          <label for="subject">Subject:</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Subject"
+            required
+          />
+          <small class="error"></small>
+
+          <label for="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Write your message..."
+            required
+          ></textarea>
+          <small class="error"></small>
+
+          <button type="submit">Send Message</button>
+          <p id="success-message" class="success"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
